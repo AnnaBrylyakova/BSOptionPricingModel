@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace BSOptionPricingModel.Classes
+﻿namespace BSOptionPricingModel.Classes
 {
     enum OptionStyle
     {

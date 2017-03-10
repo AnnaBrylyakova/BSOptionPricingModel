@@ -15,8 +15,8 @@ namespace BSOptionPricingModel.Classes
             {
                 double delta = 0;
                 foreach (Dividend dividend in option.Dividends)
-                {
-                    delta = delta + dividend.Amount * Math.Exp(-option.RiskFreeRate * dividend.Time);
+                {             
+                    delta += dividend.Amount * Math.Exp(-option.RiskFreeRate * dividend.Time);
 
                 }
                 option.Asset.AdjustedSpotPrice -= delta;
@@ -55,7 +55,6 @@ namespace BSOptionPricingModel.Classes
 
         private static double Erf(double x)
         {
-            // constants
             double a1 = 0.254829592;
             double a2 = -0.284496736;
             double a3 = 1.421413741;
@@ -63,13 +62,11 @@ namespace BSOptionPricingModel.Classes
             double a5 = 1.061405429;
             double p = 0.3275911;
 
-            // Save the sign of x
             int sign = 1;
             if (x < 0)
                 sign = -1;
             x = Math.Abs(x);
 
-            // A&S formula 7.1.26
             double t = 1.0 / (1.0 + p * x);
             double y = 1.0 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * Math.Exp(-x * x);
 

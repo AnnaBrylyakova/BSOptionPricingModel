@@ -2,11 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace BSOptionPricingModel.Classes
 {
@@ -14,8 +10,13 @@ namespace BSOptionPricingModel.Classes
     {
         public string[] readAllLines(string filePath)
         {
-            string path = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, filePath);
-            return File.ReadAllLines(path);
+            try
+            {
+                string path = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, filePath);
+                return File.ReadAllLines(path);
+            } catch (Exception) {
+                return new string[0];
+            }
         }
 
         public List<double> readColumn(string filePath)
