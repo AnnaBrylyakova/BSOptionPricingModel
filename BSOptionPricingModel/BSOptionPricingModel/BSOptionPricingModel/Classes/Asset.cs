@@ -5,24 +5,10 @@ namespace BSOptionPricingModel
 {
     internal class Asset
     {
-        private string name;
         private double spotPrice;
         private double volatility;
         private double adjustedSpotPrice;
         private List<double> historicalPrices;
-
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-
-            set
-            {
-                name = value;
-            }
-        }
 
         public double SpotPrice
         {

@@ -116,5 +116,6 @@ namespace BSOptionPricingModel.Classes
                 strikePrice = value;
             }
         }
+
     }
 }

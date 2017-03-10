@@ -9,6 +9,7 @@ namespace BSOptionPricingModel
         public static string dividends = @"Data\Dividends2.csv";
         public static string historicalPrices = @"Data\Prices.csv";
         public static string outputPath = @"Data\OptionPrice.csv";
+
         static void Main(string[] args)
         {
             Reader reader = new CsvReader();
