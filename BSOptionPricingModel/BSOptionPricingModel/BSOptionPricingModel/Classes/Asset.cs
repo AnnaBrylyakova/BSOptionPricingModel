@@ -9,6 +9,7 @@ namespace BSOptionPricingModel
         private double volatility;
         private double adjustedSpotPrice;
         private List<double> historicalPrices;
+        private VolatilityCalculator calculator = new VolatilityCalculator();
 
         public double SpotPrice
         {
@@ -59,7 +60,6 @@ namespace BSOptionPricingModel
 
             set
             {
-                VolatilityCalculator calculator = new VolatilityCalculator();
                 historicalPrices = value;
                 volatility = calculator.calculateVolatility(historicalPrices);
             }
