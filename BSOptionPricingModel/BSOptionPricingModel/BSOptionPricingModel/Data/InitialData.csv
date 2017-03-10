@@ -1,0 +1,2 @@
+﻿"spotPrice","strikePrice","riskFreeRate","timeToMaturity","Style","Type"
+42,40,0.1,0.5,EUROPEAN,CALL

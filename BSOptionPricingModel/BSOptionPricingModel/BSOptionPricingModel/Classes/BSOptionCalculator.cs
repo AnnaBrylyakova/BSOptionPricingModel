@@ -1,9 +1,5 @@
 ﻿using BSOptionPricingModel.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BSOptionPricingModel.Classes
 {
@@ -24,12 +20,10 @@ namespace BSOptionPricingModel.Classes
 
                 }
                 option.Asset.AdjustedSpotPrice -= delta;
-                Console.WriteLine(delta.ToString());
-                Console.WriteLine(option.Asset.AdjustedSpotPrice.ToString());
             }
 
             d1 = (
-                Math.Log(option.Asset.AdjustedSpotPrice / option.Asset.StrikePrice) +
+                Math.Log(option.Asset.AdjustedSpotPrice / option.StrikePrice) +
                 (
                     option.RiskFreeRate + Math.Pow(option.Asset.Volatility, 2) / 2
                 )
@@ -39,7 +33,7 @@ namespace BSOptionPricingModel.Classes
                 option.Asset.Volatility* Math.Sqrt(option.Maturity)
                 );
         d2 = (
-               Math.Log(option.Asset.AdjustedSpotPrice / option.Asset.StrikePrice) +
+               Math.Log(option.Asset.AdjustedSpotPrice / option.StrikePrice) +
                (
                     option.RiskFreeRate - Math.Pow(option.Asset.Volatility, 2) / 2
                )
@@ -48,7 +42,7 @@ namespace BSOptionPricingModel.Classes
                / (
                option.Asset.Volatility* Math.Sqrt(option.Maturity)
                );
-            var = option.Asset.StrikePrice * Math.Exp((-1) * option.RiskFreeRate * option.Maturity);
+            var = option.StrikePrice * Math.Exp((-1) * option.RiskFreeRate * option.Maturity);
             
             price = option.Type.Equals(OptionType.CALL) ? (option.Asset.AdjustedSpotPrice * N(d1) - var * N(d2)) : (var * N(-d2) - option.Asset.AdjustedSpotPrice * N(-d1));
             

@@ -1,12 +1,15 @@
-﻿namespace BSOptionPricingModel
+﻿using BSOptionPricingModel.Classes;
+using System.Collections.Generic;
+
+namespace BSOptionPricingModel
 {
     internal class Asset
     {
         private string name;
         private double spotPrice;
-        private double strikePrice;
         private double volatility;
         private double adjustedSpotPrice;
+        private List<double> historicalPrices;
 
         public string Name
         {
@@ -34,20 +37,7 @@
                 adjustedSpotPrice = value;
             }
         }
-
-        public double StrikePrice
-        {
-            get
-            {
-                return strikePrice;
-            }
-
-            set
-            {
-                strikePrice = value;
-            }
-        }
-
+               
         public double Volatility
         {
             get
@@ -71,6 +61,21 @@
             set
             {
                 adjustedSpotPrice = value;
+            }
+        }
+
+        public List<double> HistoricalPrices
+        {
+            get
+            {
+                return historicalPrices;
+            }
+
+            set
+            {
+                VolatilityCalculator calculator = new VolatilityCalculator();
+                historicalPrices = value;
+                volatility = calculator.calculateVolatility(historicalPrices);
             }
         }
     }

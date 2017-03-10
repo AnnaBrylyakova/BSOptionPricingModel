@@ -11,6 +11,7 @@ namespace BSOptionPricingModel.Classes
         private double maturity;
         private double riskFreeRate;
         private Asset asset;
+        private double strikePrice;
         private OptionType type;
         private OptionStyle style;
         private double price;
@@ -104,6 +105,19 @@ namespace BSOptionPricingModel.Classes
             set
             {
                 style = value;
+            }
+        }
+
+        public double StrikePrice
+        {
+            get
+            {
+                return strikePrice;
+            }
+
+            set
+            {
+                strikePrice = value;
             }
         }
     }

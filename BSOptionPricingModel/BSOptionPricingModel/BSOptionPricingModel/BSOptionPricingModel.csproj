@@ -45,17 +45,27 @@
   <ItemGroup>
     <Compile Include="Classes\Asset.cs" />
     <Compile Include="Classes\BSOptionCalculator.cs" />
+    <Compile Include="Classes\CsvReader.cs" />
+    <Compile Include="Classes\CsvWriter.cs" />
     <Compile Include="Classes\Dividend.cs" />
     <Compile Include="Classes\Option.cs" />
     <Compile Include="Classes\OptionStyle.cs" />
     <Compile Include="Classes\OptionType.cs" />
+    <Compile Include="Classes\VolatilityCalculator.cs" />
     <Compile Include="Interfaces\OptionCalculator.cs" />
+    <Compile Include="Interfaces\Reader.cs" />
+    <Compile Include="Interfaces\Writer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Data\Dividends.csv" />
+    <None Include="Data\InitialData.csv" />
+    <None Include="Data\OptionPrice.csv" />
+    <None Include="Data\Prices.csv" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
