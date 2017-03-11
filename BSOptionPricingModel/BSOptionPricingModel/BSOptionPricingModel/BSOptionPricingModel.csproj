@@ -61,6 +61,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Data\Dividends.csv" />
+    <Content Include="Data\InitialData.txt" />
     <None Include="Data\InitialData.csv" />
     <None Include="Data\Prices.csv" />
   </ItemGroup>

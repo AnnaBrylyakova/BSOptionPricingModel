@@ -6,9 +6,9 @@ namespace BSOptionPricingModel
     class Program
     {
         public static string initialData = @"Data\InitialData.csv";
-        public static string dividends = @"Data\Dividends2.csv";
+        public static string dividends = @"Data\Dividends.csv";
         public static string historicalPrices = @"Data\Prices.csv";
-        public static string outputPath = @"Data\OptionPrice.csv";
+        public static string outputPath = @"Data\OptionPrice.txt";
 
         static void Main(string[] args)
         {
